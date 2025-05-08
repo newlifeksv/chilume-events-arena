@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 // For security, in a production app, these values should be in environment variables
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
-  authDomain: "chilume-events.firebaseapp.com",
-  projectId: "chilume-events",
-  storageBucket: "chilume-events.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abc123def456"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyD-cHYiPoko9cqL0m-LsTPfbqI1X1_fAbQ",
+  authDomain: "chilumeaws.firebaseapp.com",
+  projectId: "chilumeaws",
+  storageBucket: "chilumeaws.firebasestorage.app",
+  messagingSenderId: "31648539048",
+  appId: "1:31648539048:web:ed6e8343e82e747a843d9d"
 };
 
 // Initialize Firebase
