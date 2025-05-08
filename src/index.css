@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 212 100% 48%;
+    --primary: 210 84% 37%; /* AWS blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 30 95% 53%;
+    --secondary: 36 100% 50%; /* AWS orange */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -35,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem; /* AWS uses less rounded corners */
   }
 
   .dark {
@@ -79,14 +79,65 @@
   }
 }
 
+/* AWS-inspired utility classes */
+.aws-card {
+  @apply bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-md transition-shadow p-5;
+}
+
+.aws-input {
+  @apply border border-gray-300 rounded-sm p-2 w-full focus:outline-none focus:border-[#0073bb] focus:ring-1 focus:ring-[#0073bb];
+}
+
+.aws-button-primary {
+  @apply bg-[#ff9900] text-black hover:bg-[#e68a00] rounded-sm px-4 py-2 font-medium transition-colors;
+}
+
+.aws-button-secondary {
+  @apply bg-[#f2f3f3] border border-[#d5dbdb] text-[#545b64] hover:bg-[#e7e9ea] rounded-sm px-4 py-2 font-medium transition-colors;
+}
+
+.aws-nav-link {
+  @apply text-gray-200 hover:text-[#ff9900] transition-colors;
+}
+
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  @apply transition-all duration-300 hover:shadow-md;
 }
 
 .btn-primary {
-  @apply bg-primary text-white hover:bg-primary-hover transition-colors;
+  @apply bg-[#ff9900] text-black hover:bg-[#e68a00] transition-colors;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-white hover:bg-secondary-hover transition-colors;
+  @apply bg-[#f2f3f3] border border-[#d5dbdb] text-[#545b64] hover:bg-[#e7e9ea] transition-colors;
+}
+
+/* AWS-inspired animations */
+@keyframes aws-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aws-fade-in {
+  animation: aws-fade-in 0.3s ease-out;
+}
+
+/* AWS Console color variables for reference */
+:root {
+  --aws-navy: #232f3e;
+  --aws-dark-navy: #16191f;
+  --aws-orange: #ff9900;
+  --aws-light-orange: #ffac31;
+  --aws-blue: #0073bb;
+  --aws-light-blue: #0097e6;
+  --aws-text-primary: #16191f;
+  --aws-text-secondary: #545b64;
+  --aws-border: #d5dbdb;
+  --aws-background: #f2f3f3;
+  --aws-success: #2d8653;
+  --aws-warning: #d13212;
 }

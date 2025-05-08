@@ -14,39 +14,47 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
   totalFundsCollected 
 }) => {
   return (
-    <div className="bg-white py-12">
+    <div className="bg-[#f2f3f3] py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="bg-blue-50 p-4 rounded-full mb-4">
-              <Calendar className="h-8 w-8 text-primary" />
+          <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#eaedfd] p-4 rounded-full mb-4">
+                <Calendar className="h-8 w-8 text-[#545b64]" />
+              </div>
+              <div className="text-3xl font-bold mb-2 text-[#232f3e]">{totalEvents}</div>
+              <div className="text-[#545b64]">Events</div>
             </div>
-            <div className="text-3xl font-bold mb-2">{totalEvents}</div>
-            <div className="text-gray-600">Events</div>
           </div>
           
-          <div className="flex flex-col items-center text-center">
-            <div className="bg-green-50 p-4 rounded-full mb-4">
-              <Users className="h-8 w-8 text-green-600" />
+          <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#e8f3eb] p-4 rounded-full mb-4">
+                <Users className="h-8 w-8 text-[#2d8653]" />
+              </div>
+              <div className="text-3xl font-bold mb-2 text-[#232f3e]">{totalParticipants}</div>
+              <div className="text-[#545b64]">Participants</div>
             </div>
-            <div className="text-3xl font-bold mb-2">{totalParticipants}</div>
-            <div className="text-gray-600">Participants</div>
           </div>
           
-          <div className="flex flex-col items-center text-center">
-            <div className="bg-yellow-50 p-4 rounded-full mb-4">
-              <Trophy className="h-8 w-8 text-yellow-600" />
+          <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#fff8e6] p-4 rounded-full mb-4">
+                <Trophy className="h-8 w-8 text-[#ff9900]" />
+              </div>
+              <div className="text-3xl font-bold mb-2 text-[#232f3e]">{totalEvents * 2}</div>
+              <div className="text-[#545b64]">Winners</div>
             </div>
-            <div className="text-3xl font-bold mb-2">{totalEvents * 2}</div>
-            <div className="text-gray-600">Winners</div>
           </div>
           
-          <div className="flex flex-col items-center text-center">
-            <div className="bg-purple-50 p-4 rounded-full mb-4">
-              <Coins className="h-8 w-8 text-purple-600" />
+          <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-[#f1eaf8] p-4 rounded-full mb-4">
+                <Coins className="h-8 w-8 text-[#5f4b8b]" />
+              </div>
+              <div className="text-3xl font-bold mb-2 text-[#232f3e]">₹{totalFundsCollected.toLocaleString()}</div>
+              <div className="text-[#545b64]">Funds Collected</div>
             </div>
-            <div className="text-3xl font-bold mb-2">₹{totalFundsCollected.toLocaleString()}</div>
-            <div className="text-gray-600">Funds Collected</div>
           </div>
         </div>
       </div>
