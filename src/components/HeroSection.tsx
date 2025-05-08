@@ -2,9 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
   const currentYear = new Date().getFullYear();
+  const isMobile = useIsMobile();
 
   return (
     <div className="bg-gradient-to-r from-[#232f3e] to-[#0a1929] text-white py-16 md:py-24">
@@ -18,12 +20,12 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link to="/events">
-              <Button size="lg" className="bg-[#ff9900] text-black hover:bg-[#e68a00] border-none text-lg px-8 font-medium">
+              <Button size="lg" className={`bg-[#ff9900] text-black hover:bg-[#e68a00] border-none text-lg px-8 font-medium ${isMobile ? "w-full" : ""}`}>
                 Explore Events
               </Button>
             </Link>
             <Link to="/register">
-              <Button size="lg" variant="outline" className="border-[#ff9900] text-[#ff9900] hover:bg-[#ff9900]/10 text-lg px-8">
+              <Button size="lg" variant="outline" className={`border-[#ff9900] text-[#ff9900] hover:bg-[#ff9900]/10 text-lg px-8 ${isMobile ? "w-full" : ""}`}>
                 Register Now
               </Button>
             </Link>
